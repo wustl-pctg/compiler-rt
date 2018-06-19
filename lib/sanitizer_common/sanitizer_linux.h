@@ -20,7 +20,11 @@
 #include "sanitizer_platform_limits_posix.h"
 
 struct link_map;  // Opaque type returned by dlopen().
-struct sigaltstack;
+
+//struct sigaltstack;
+// ROB: hacky fix for later versions of glibc
+#include "bits/types/stack_t.h"
+typedef stack_t sigaltstack;
 
 namespace __sanitizer {
 // Dirent structure for getdents(). Note that this structure is different from
