@@ -43,7 +43,7 @@
 #include <sched.h>
 #include <dlfcn.h>
 #define __need_res_state
-#include <resolv.h>
+#include "bits/types/res_state.h"
 #include <malloc.h>
 
 #ifdef sa_handler
